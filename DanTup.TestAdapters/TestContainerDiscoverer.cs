@@ -74,14 +74,29 @@ namespace DanTup.TestAdapters
 			watcher = new MultiFileSystemWatcher();
 			watcher.FileChanged += TestContainerUpdated;
 
-			// Get all directories that had test containers
-			var dirs = cachedTestContainers
-				.Select(tc => Path.GetDirectoryName(tc.Source))
-				.Distinct();
+			// Subscribe to the solution directory, which should pick up most changes
+			string solutionDirectory, solutionFile, userOptionsFile;
+			if (solutionService.GetSolutionInfo(out solutionDirectory, out solutionFile, out userOptionsFile) == VSConstants.S_OK)
+			{
+				// Ensure the solution dir ends with \ so we can compare when looking for subfolders
+				if (!solutionDirectory.EndsWith("\\"))
+					solutionDirectory = solutionDirectory + "\\";
 
-			foreach (var dir in dirs)
 				foreach (var filePattern in this.WatchedFilePatterns)
-					watcher.AddWatcher(dir, filePattern);
+					watcher.AddWatcher(solutionDirectory, filePattern);
+
+				// Get all directories that had test containers that are not already children of the solution dir (it's already being watched)
+				var dirs = cachedTestContainers
+					.Select(tc => Path.GetDirectoryName(tc.Source) + "\\")
+					.Distinct(StringComparer.OrdinalIgnoreCase)
+					.Where(tc => !tc.StartsWith(solutionDirectory, StringComparison.OrdinalIgnoreCase));
+
+				foreach (var dir in dirs)
+				{
+					foreach (var filePattern in this.WatchedFilePatterns)
+						watcher.AddWatcher(dir, filePattern);
+				}
+			}
 		}
 
 		private void TestContainerUpdated(object sender, EventArgs e)
@@ -137,7 +152,6 @@ namespace DanTup.TestAdapters
 
 		int IVsSolutionEvents.OnAfterOpenSolution(object pUnkReserved, int fNewSolution)
 		{
-			TestContainerUpdated(this, EventArgs.Empty);
 			return VSConstants.S_OK;
 		}
 

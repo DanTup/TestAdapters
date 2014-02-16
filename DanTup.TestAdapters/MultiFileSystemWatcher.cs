@@ -12,11 +12,11 @@ namespace DanTup.TestAdapters
 		List<FileSystemWatcher> watchers = new List<FileSystemWatcher>();
 		public event FileSystemEventHandler FileChanged;
 
-		public void AddWatcher(string directory, string filePattern, bool includeChildDirectories = false)
+		public void AddWatcher(string directory, string filePattern)
 		{
 			var watcher = new FileSystemWatcher(directory, filePattern);
 			watcher.NotifyFilter = NotifyFilters.DirectoryName | NotifyFilters.FileName | NotifyFilters.LastWrite;
-			watcher.IncludeSubdirectories = includeChildDirectories;
+			watcher.IncludeSubdirectories = true;
 			watcher.Created += OnFileChanged;
 			watcher.Changed += OnFileChanged;
 			watcher.Deleted += OnFileChanged;
