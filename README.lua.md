@@ -22,6 +22,11 @@ Usage
 3. Start any test fuctions with test_ and use assert() or throw errors for failures
 4. Create a testframework_setup or testframework_teardown function if you have code that must be run before/after each test
 
+Known Issues / Limitations
+===
+1. [Issue #1](/../../issues/1) Currently all tests will always be executed, even if you select a subset of tests
+2. [Issue #2](/../../issues/2) Currently all tests must finish executing before results are displayed
+
 Feedback
 ===
 Please send your feedback/issues/feature requests! :-)
