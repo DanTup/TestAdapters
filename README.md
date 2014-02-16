@@ -1,9 +1,9 @@
-﻿Test Adapters and Frameworks for Visual Studio for Lua
+﻿Test Adapters and Frameworks for Visual Studio
 =========
 
 A collection of test adapters and frameworks for non-.NET languages in Visual Studio.
 
-[Lua Test Adapter and Framework](README.lua.md)
+- [Lua Test Adapter and Framework](README.lua.md)
 
 Feedback
 ===
