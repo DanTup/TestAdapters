@@ -18,7 +18,7 @@ Features
 Installation
 ===
 
-1. Install from [Visual Studio Gallery](http://visualstudiogallery.msdn.microsoft.com/)
+1. Install from [Visual Studio Gallery](http://visualstudiogallery.msdn.microsoft.com/8a046271-217f-48b6-8293-2b8447081695)
 
 Usage
 ===
