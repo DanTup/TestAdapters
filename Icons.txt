@@ -1,0 +1,9 @@
+Icon made via http://icon-generator.net/
+"Star Badge" with default settings:
+	Color: CC0000
+	Contrast: 50%(?)
+	Glare: 0%
+	Shadow: Yes
+	Font: Myriad
+
+Converted 512 desktop version via http://www.convertico.com/

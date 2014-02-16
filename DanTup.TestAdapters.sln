@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanTup.TestAdapters", "DanT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanTup.TestAdapters.Lua", "DanTup.TestAdapters.Lua\DanTup.TestAdapters.Lua.csproj", "{1DCB3D66-3EC4-4091-A2E9-6F8AC0AA3F58}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanTup.TestAdapters.Lua.Vsix", "DanTup.TestAdapters.Lua.Vsix\DanTup.TestAdapters.Lua.Vsix.csproj", "{3360FAA4-7ECB-4243-A94C-2E7E9B022989}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1DCB3D66-3EC4-4091-A2E9-6F8AC0AA3F58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DCB3D66-3EC4-4091-A2E9-6F8AC0AA3F58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DCB3D66-3EC4-4091-A2E9-6F8AC0AA3F58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3360FAA4-7ECB-4243-A94C-2E7E9B022989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3360FAA4-7ECB-4243-A94C-2E7E9B022989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3360FAA4-7ECB-4243-A94C-2E7E9B022989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3360FAA4-7ECB-4243-A94C-2E7E9B022989}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
