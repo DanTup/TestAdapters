@@ -1,3 +1,3 @@
 ﻿using System.Reflection;
 
-[assembly: AssemblyTitle("Lua TestAdapter and Framework")]
+[assembly: AssemblyTitle("Lua Test Adapter and Framework")]

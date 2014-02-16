@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 	<Metadata>
-		<Identity Id="ebeed035-d49f-489d-9ba9-eea6e90463af" Version="1.0" Language="en-US" Publisher="Danny Tuppeny" />
-		<DisplayName>Lua TestAdapter and Framework</DisplayName>
+		<Identity Id="ebeed035-d49f-489d-9ba9-eea6e90463af" Version="1.1" Language="en-US" Publisher="Danny Tuppeny" />
+		<DisplayName>Lua Test Adapter and Framework</DisplayName>
 		<Description xml:space="preserve">Test Adapter and Test Framework for the lua scripting language.</Description>
-		<MoreInfo>https://github.com/DanTup/TestAdapters</MoreInfo>
+		<MoreInfo>https://github.com/DanTup/TestAdapters/blob/master/README.lua.md</MoreInfo>
 		<License>LICENCE.txt</License>
-		<GettingStartedGuide>https://github.com/DanTup/TestAdapters</GettingStartedGuide>
+		<GettingStartedGuide>https://github.com/DanTup/TestAdapters/blob/master/README.lua.md</GettingStartedGuide>
 		<ReleaseNotes>https://github.com/DanTup/TestAdapters/releases</ReleaseNotes>
 		<Icon>Resources\Package.ico</Icon>
 		<PreviewImage>Screenshot.png</PreviewImage>
-		<Tags>lua test framework adapter world warcraft</Tags>
+		<Tags>lua, test, framework, adapter, world of warcraft</Tags>
 	</Metadata>
 	<Installation InstalledByMsi="false">
 		<InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0]" />
