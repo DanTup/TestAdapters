@@ -47,6 +47,8 @@ namespace DanTup.TestAdapters
 		/// </summary>
 		private string ExecuteTestCommand(string source, Action<string> logger, string args, string action)
 		{
+			// TODO: Currently we execute all tests and get the outpuit in one go; we should change this to handle the XML nodes as they come in.
+			// TODO: Check how nicely we're handling crashes.
 			using (var proc = new Process { StartInfo = CreateProcessStartInfo(source, args) })
 			{
 				proc.Start();
