@@ -14,5 +14,7 @@
 		<Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
 	</Dependencies>
 	<Assets>
+		<Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="DanTup.TestAdapters.Lua" Path="|DanTup.TestAdapters.Lua|" />
+		<Asset Type="UnitTestExtension" d:Source="Project" d:ProjectName="DanTup.TestAdapters.Lua" Path="|DanTup.TestAdapters.Lua|" />
 	</Assets>
 </PackageManifest>
