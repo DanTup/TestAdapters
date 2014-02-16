@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reactive.Linq;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.TestWindow.Extensibility;
@@ -28,6 +29,12 @@ namespace DanTup.TestAdapters
 			this.solutionService = (IVsSolution)serviceProvider.GetService(typeof(SVsSolution));
 			uint pdwCookie;
 			this.solutionService.AdviseSolutionEvents(this, out pdwCookie);
+
+			// In order to throttle events, use wire up the real event to TestContainersUpdatedInternal via an Rx Sample()
+			Observable
+				.FromEventPattern<EventHandler, EventArgs>(x => this.TestContainersUpdatedInternal += x, x => this.TestContainersUpdatedInternal -= x)
+				.Sample(TimeSpan.FromMilliseconds(250))
+				.Subscribe(e => TestContainersUpdated(this, EventArgs.Empty));
 		}
 
 		public IEnumerable<ITestContainer> TestContainers
@@ -108,10 +115,12 @@ namespace DanTup.TestAdapters
 		{
 			cachedTestContainers = null;
 
-			var evt = TestContainersUpdated;
+			var evt = TestContainersUpdatedInternal;
 			if (evt != null)
 				evt(this, EventArgs.Empty);
 		}
+
+		public event EventHandler TestContainersUpdatedInternal;
 
 		public event EventHandler TestContainersUpdated;
 
