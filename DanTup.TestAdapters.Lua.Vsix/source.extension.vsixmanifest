@@ -5,7 +5,12 @@
 		<DisplayName>DanTup.TestAdapters.Lua.Vsix</DisplayName>
 		<Description xml:space="preserve">Test Adapter and Test Framework for the lua scripting language.</Description>
 		<MoreInfo>https://github.com/DanTup/TestAdapters</MoreInfo>
+		<License>LICENCE.txt</License>
+		<GettingStartedGuide>https://github.com/DanTup/TestAdapters</GettingStartedGuide>
+		<ReleaseNotes>https://github.com/DanTup/TestAdapters/releases</ReleaseNotes>
 		<Icon>Resources\Package.ico</Icon>
+		<PreviewImage>Screenshot.png</PreviewImage>
+		<Tags>lua test framework adapter world warcraft</Tags>
 	</Metadata>
 	<Installation InstalledByMsi="false">
 		<InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0]" />
