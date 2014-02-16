@@ -12,7 +12,7 @@ namespace DanTup.TestAdapters
 	/// Base TestContainerDiscoverer that scans projects for certain file extensions assumed to be tests and
 	/// watches them for changes, notifying VS when the tests may have been updated.
 	/// </summary>
-	public abstract class TestContainerDiscoverer : ITestContainerDiscoverer, IDisposable, IVsSolutionEvents
+	public abstract class TestContainerDiscoverer : ITestContainerDiscoverer, IDisposable, IVsSolutionEvents, IVsHierarchyEvents
 	{
 		public abstract Uri ExecutorUri { get; }
 		protected abstract string TestContainerFileExtension { get; }
@@ -97,6 +97,11 @@ namespace DanTup.TestAdapters
 						watcher.AddWatcher(dir, filePattern);
 				}
 			}
+
+			// Also subscribe to the projects own changes to deal with new items being added outside of the solution directory
+			uint pdwCookie;
+			foreach (var p in solutionService.GetProjects())
+				p.AdviseHierarchyEvents(this, out pdwCookie);
 		}
 
 		private void TestContainerUpdated(object sender, EventArgs e)
@@ -181,6 +186,42 @@ namespace DanTup.TestAdapters
 		}
 
 		int IVsSolutionEvents.OnQueryUnloadProject(IVsHierarchy pRealHierarchy, ref int pfCancel)
+		{
+			return VSConstants.S_OK;
+		}
+
+		#endregion
+
+		#region IVsHierarchyEvents Cruft
+
+		int IVsHierarchyEvents.OnInvalidateIcon(IntPtr hicon)
+		{
+			return VSConstants.S_OK;
+		}
+
+		int IVsHierarchyEvents.OnInvalidateItems(uint itemidParent)
+		{
+			return VSConstants.S_OK;
+		}
+
+		int IVsHierarchyEvents.OnItemAdded(uint itemidParent, uint itemidSiblingPrev, uint itemidAdded)
+		{
+			TestContainerUpdated(this, EventArgs.Empty);
+			return VSConstants.S_OK;
+		}
+
+		int IVsHierarchyEvents.OnItemDeleted(uint itemid)
+		{
+			TestContainerUpdated(this, EventArgs.Empty);
+			return VSConstants.S_OK;
+		}
+
+		int IVsHierarchyEvents.OnItemsAppended(uint itemidParent)
+		{
+			return VSConstants.S_OK;
+		}
+
+		int IVsHierarchyEvents.OnPropertyChanged(uint itemid, int propid, uint flags)
 		{
 			return VSConstants.S_OK;
 		}
