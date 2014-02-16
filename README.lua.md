@@ -1,6 +1,8 @@
 ﻿Lua Test Adapter and Framework
 =========
 
+[![Lua Test Adapter and Framework for Visual Studio](http://img.youtube.com/vi/fW3L3LTMdBw/0.jpg)](http://www.youtube.com/watch?v=fW3L3LTMdBw)
+
 Features
 ===
 
