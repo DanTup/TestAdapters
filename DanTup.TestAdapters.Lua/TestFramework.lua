@@ -27,6 +27,10 @@ local function ExecuteTests()
 	print("<Tests>")
 	failcount = 0
 	for name, value in pairs(allTests) do
+		if testframework_setup ~= nil then
+			testframework_setup()
+		end
+
 		local printStack = function(err) return { err, debug.traceback(err) } end
 		local pass, err = xpcall(value, printStack)
 
@@ -44,6 +48,10 @@ local function ExecuteTests()
 		end
 		print("	</Test>")
 		if not pass then failcount = failcount + 1 end
+
+		if testframework_teardown ~= nil then
+			testframework_teardown()
+		end
 	end
 	print("</Tests>")
 
