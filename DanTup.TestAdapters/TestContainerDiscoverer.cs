@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.TestWindow.Extensibility;
 
@@ -11,7 +12,7 @@ namespace DanTup.TestAdapters
 	/// Base TestContainerDiscoverer that scans projects for certain file extensions assumed to be tests and
 	/// watches them for changes, notifying VS when the tests may have been updated.
 	/// </summary>
-	public abstract class TestContainerDiscoverer : ITestContainerDiscoverer, IDisposable
+	public abstract class TestContainerDiscoverer : ITestContainerDiscoverer, IDisposable, IVsSolutionEvents
 	{
 		public abstract Uri ExecutorUri { get; }
 		protected abstract string TestContainerFileExtension { get; }
@@ -25,6 +26,8 @@ namespace DanTup.TestAdapters
 		protected TestContainerDiscoverer(IServiceProvider serviceProvider)
 		{
 			this.solutionService = (IVsSolution)serviceProvider.GetService(typeof(SVsSolution));
+			uint pdwCookie;
+			this.solutionService.AdviseSolutionEvents(this, out pdwCookie);
 		}
 
 		public IEnumerable<ITestContainer> TestContainers
@@ -110,6 +113,62 @@ namespace DanTup.TestAdapters
 					watcher = null;
 				}
 			}
+		}
+
+		#endregion
+
+		#region IVsSolutionEvents Cruft
+
+		int IVsSolutionEvents.OnAfterCloseSolution(object pUnkReserved)
+		{
+			return VSConstants.S_OK;
+		}
+
+		int IVsSolutionEvents.OnAfterLoadProject(IVsHierarchy pStubHierarchy, IVsHierarchy pRealHierarchy)
+		{
+			return VSConstants.S_OK;
+		}
+
+		int IVsSolutionEvents.OnAfterOpenProject(IVsHierarchy pHierarchy, int fAdded)
+		{
+			TestContainerUpdated(this, EventArgs.Empty);
+			return VSConstants.S_OK;
+		}
+
+		int IVsSolutionEvents.OnAfterOpenSolution(object pUnkReserved, int fNewSolution)
+		{
+			TestContainerUpdated(this, EventArgs.Empty);
+			return VSConstants.S_OK;
+		}
+
+		int IVsSolutionEvents.OnBeforeCloseProject(IVsHierarchy pHierarchy, int fRemoved)
+		{
+			return VSConstants.S_OK;
+		}
+
+		int IVsSolutionEvents.OnBeforeCloseSolution(object pUnkReserved)
+		{
+			return VSConstants.S_OK;
+		}
+
+		int IVsSolutionEvents.OnBeforeUnloadProject(IVsHierarchy pRealHierarchy, IVsHierarchy pStubHierarchy)
+		{
+			return VSConstants.S_OK;
+		}
+
+		int IVsSolutionEvents.OnQueryCloseProject(IVsHierarchy pHierarchy, int fRemoving, ref int pfCancel)
+		{
+			return VSConstants.S_OK;
+		}
+
+		int IVsSolutionEvents.OnQueryCloseSolution(object pUnkReserved, ref int pfCancel)
+		{
+			return VSConstants.S_OK;
+		}
+
+		int IVsSolutionEvents.OnQueryUnloadProject(IVsHierarchy pRealHierarchy, ref int pfCancel)
+		{
+			return VSConstants.S_OK;
 		}
 
 		#endregion
