@@ -2,7 +2,7 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 	<Metadata>
 		<Identity Id="ebeed035-d49f-489d-9ba9-eea6e90463af" Version="1.0" Language="en-US" Publisher="Danny Tuppeny" />
-		<DisplayName>DanTup.TestAdapters.Lua.Vsix</DisplayName>
+		<DisplayName>Lua TestAdapter and Framework</DisplayName>
 		<Description xml:space="preserve">Test Adapter and Test Framework for the lua scripting language.</Description>
 		<MoreInfo>https://github.com/DanTup/TestAdapters</MoreInfo>
 		<License>LICENCE.txt</License>

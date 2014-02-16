@@ -1,3 +1,3 @@
 ﻿using System.Reflection;
 
-[assembly: AssemblyTitle("DanTup TestAdapters Common")]
+[assembly: AssemblyTitle("Danny Tuppeny TestAdapters and Frameworks")]
