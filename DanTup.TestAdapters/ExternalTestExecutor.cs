@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Xml.Serialization;
 
@@ -39,7 +40,7 @@ namespace DanTup.TestAdapters
 		private IEnumerable<GenericTest> ParseTestOutput(string testXml)
 		{
 			var tests = (GenericTests)new XmlSerializer(typeof(GenericTests)).Deserialize(new StringReader(testXml));
-			return tests.Tests;
+			return tests.Tests ?? Enumerable.Empty<GenericTest>();
 		}
 
 		/// <summary>
