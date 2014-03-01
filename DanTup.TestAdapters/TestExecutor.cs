@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Xml.Serialization;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.Adapter;
 
@@ -56,7 +54,9 @@ namespace DanTup.TestAdapters
 
 			return new TestResult(testCase)
 			{
-				Outcome = test.Outcome
+				Outcome = test.Outcome,
+				ErrorMessage = test.ErrorMessage,
+				ErrorStackTrace = test.ErrorStackTrace
 			};
 		}
 	}
