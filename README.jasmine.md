@@ -1,6 +1,8 @@
 ﻿Jasmine Test Adapter
 =========
 
+[![Jasmine Test Adapter for Visual Studio](http://img.youtube.com/vi/Gc4xLjUxxOY/0.jpg)](http://www.youtube.com/watch?v=Gc4xLjUxxOY)
+
 Features
 ===
 
