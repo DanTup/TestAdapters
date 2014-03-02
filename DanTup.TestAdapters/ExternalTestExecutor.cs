@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Xml.Serialization;
 
 namespace DanTup.TestAdapters
@@ -31,17 +30,20 @@ namespace DanTup.TestAdapters
 		/// </summary>
 		public IEnumerable<GenericTest> GetTestResults(string source, Action<string> logger)
 		{
-			return ParseTestOutput(ExecuteTestCommand(source, logger, "", "executing tests"));
+			return ParseTestOutput(ExecuteTestCommand(source, logger, "", "executing tests"), removeExtensionDirectoryFromSackTraces: true);
 		}
 
 		/// <summary>
 		/// Parse the XML returned by the external command into our generic test class.
 		/// </summary>
-		private IEnumerable<GenericTest> ParseTestOutput(string testXml)
+		private IEnumerable<GenericTest> ParseTestOutput(string testXml, bool removeExtensionDirectoryFromSackTraces = false)
 		{
 			var tests = (GenericTests)new XmlSerializer(typeof(GenericTests)).Deserialize(new StringReader(testXml));
 
-			return CleanupResults(tests.Tests ?? Enumerable.Empty<GenericTest>());
+			if (removeExtensionDirectoryFromSackTraces)
+				tests.Tests = CleanupResults(tests.Tests).ToArray();
+
+			return tests.Tests ?? Enumerable.Empty<GenericTest>();
 		}
 
 		private IEnumerable<GenericTest> CleanupResults(IEnumerable<GenericTest> tests)
