@@ -27,7 +27,7 @@ module.exports = function (onComplete) {
 		//console.log("		<CodeFilePath>DannyFake.js</CodeFilePath>")
 		//console.log("		<LineNumber>1</LineNumber>")
 		if (result.status !== 'disabled') {
-			console.log("		<Outcome>%s</Outcome>", result.status !== 'passed' ? 'Failed' : 'Passed')
+			console.log("		<Outcome>%s</Outcome>", result.status === 'passed' ? 'Passed' : result.status === 'failed' ? 'Failed' : 'Skipped')
 			if (result.status === 'failed') {
 				console.log("		<ErrorMessage>%s</ErrorMessage>", xmlEncode(result.failedExpectations[0].message))
 				console.log("		<ErrorStackTrace>%s</ErrorStackTrace>", xmlEncode(result.failedExpectations[0].stack))
