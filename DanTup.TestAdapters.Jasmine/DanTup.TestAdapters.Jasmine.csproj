@@ -75,11 +75,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\..\..\Apps\Node\node.exe">
-      <Link>node.exe</Link>
+    <Content Include="Node Readme.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Node Readme.txt">
+    <Content Include="node.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
