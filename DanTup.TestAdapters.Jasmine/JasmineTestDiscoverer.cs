@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Reflection;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel.Adapter;
 
 namespace DanTup.TestAdapters.Jasmine
 {
@@ -12,6 +9,9 @@ namespace DanTup.TestAdapters.Jasmine
 	[DefaultExecutorUri(JasmineTestExecutor.TestExecutorUriString)]
 	public class JasmineTestDiscoverer : TestDiscoverer
 	{
+		static readonly string extensionFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+		public override string ExtensionFolder { get { return extensionFolder; } }
+
 		readonly JasmineExternalTestExecutor executor = new JasmineExternalTestExecutor();
 
 		protected override ExternalTestExecutor ExternalTestExecutor { get { return executor; } }
