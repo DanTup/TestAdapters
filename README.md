@@ -4,6 +4,7 @@
 A collection of test adapters and frameworks for non-.NET languages in Visual Studio.
 
 - [Lua Test Adapter and Framework](README.lua.md)
+- [Jasmine Test Adapter](README.jasmine.md)
 
 Feedback
 ===
