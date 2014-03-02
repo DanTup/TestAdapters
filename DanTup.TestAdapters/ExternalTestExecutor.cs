@@ -40,7 +40,27 @@ namespace DanTup.TestAdapters
 		private IEnumerable<GenericTest> ParseTestOutput(string testXml)
 		{
 			var tests = (GenericTests)new XmlSerializer(typeof(GenericTests)).Deserialize(new StringReader(testXml));
-			return tests.Tests ?? Enumerable.Empty<GenericTest>();
+
+			return CleanupResults(tests.Tests ?? Enumerable.Empty<GenericTest>());
+		}
+
+		private IEnumerable<GenericTest> CleanupResults(IEnumerable<GenericTest> tests)
+		{
+			// Don't tell anyone we're mutating data here, won't go down well...
+
+			foreach (var t in tests)
+			{
+				// Strip VS extension folder out of stack traces, to keep them less noisy
+				if (!string.IsNullOrWhiteSpace(t.ErrorStackTrace))
+				{
+					t.ErrorStackTrace = t.ErrorStackTrace
+						.Replace(extensionFolder + @"\", "")
+						.Replace(extensionFolder.ToUpper() + @"\", "")
+						.Replace(extensionFolder.ToLower() + @"\", ""); // HACK: Don't get me started on VS's random all-lowercasing or all-uppercasing of paths :(
+				}
+			}
+
+			return tests;
 		}
 
 		/// <summary>
