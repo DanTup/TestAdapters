@@ -1,7 +1,10 @@
-module.exports = function () {
+module.exports = function (onComplete) {
+	var onComplete = onComplete;
 	var specs = [];
 
 	this.jasmineDone = function () {
+		if (onComplete)
+			onComplete();
 		console.log("<Tests>");
 		for (var i = 0; i < specs.length; i++) {
 			specDetails(specs[i]);

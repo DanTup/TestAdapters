@@ -12,10 +12,18 @@ xmlReporter = require('./XmlReporter.js')
 // WHAT THE? I DON'T EVEN KNOW WHAT THIS MEANS
 jasmine = jasmine.core(jasmine);
 
+// Hijack STDOUT for test run, and put back afterwards
+// This allows us to get test output (TODO), and also stop tests interfering with our output XML
+var oldWrite = process.stdout.write;
+process.stdout.write = function () { }
+var restoreOutput = function () {
+	process.stdout.write = oldWrite;
+}
+
 // Setup
 var env = jasmine.getEnv();
 env.specFilter = function () { return process.argv.length !== 5 || process.argv[4] !== 'list'; } // Flag tests not to match the filter if we're listing
-env.addReporter(new xmlReporter()); // Set up the console logger
+env.addReporter(new xmlReporter(restoreOutput)); // Set up the console logger
 
 // Create some global functions to avoid putting jasmine.getEnv() everywhere
 describe = env.describe;
@@ -25,7 +33,6 @@ expect = env.expect;
 
 // Include tests file
 require(process.argv[3]);
-
 
 // Kick off execution
 env.execute();
