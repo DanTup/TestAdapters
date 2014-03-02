@@ -24,7 +24,8 @@ Known Issues / Limitations
 ===
 1. [Issue #1](/../../issues/1) Currently all tests will always be executed, even if you select a subset of tests
 2. [Issue #2](/../../issues/2) Currently all tests must finish executing before results are displayed
-3. [Issue #2](/../../issues/2) Currently tests do not display filename/line number or allow quickly jumping to them from the Test Explorer window
+3. [Issue #3](/../../issues/3) Currently tests do not display filename/line number or allow quickly jumping to them from the Test Explorer window
+4. [Issue #4](/../../issues/4) Any output to console during tests breaks test adapter
 
 Feedback
 ===
