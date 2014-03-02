@@ -1,10 +1,14 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 
 namespace DanTup.TestAdapters.Lua
 {
 	public class LuaExternalTestExecutor : ExternalTestExecutor
 	{
+		static readonly string extensionFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+		public override string ExtensionFolder { get { return extensionFolder; } }
+
 		static readonly string luaExecutable = Path.Combine(extensionFolder, "lua52.exe");
 		static readonly string testFrameworkFile = Path.Combine(extensionFolder, "TestFramework.lua");
 

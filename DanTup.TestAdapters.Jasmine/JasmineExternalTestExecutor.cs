@@ -1,10 +1,14 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 
 namespace DanTup.TestAdapters.Jasmine
 {
 	public class JasmineExternalTestExecutor : ExternalTestExecutor
 	{
+		static readonly string extensionFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+		public override string ExtensionFolder { get { return extensionFolder; } }
+
 		static readonly string nodeExecutable = Path.Combine(extensionFolder, "node.exe");
 		static readonly string testFrameworkFile = Path.Combine(extensionFolder, "TestFramework.js");
 		static readonly string jasmineFile = Path.Combine(extensionFolder, "jasmine.js");

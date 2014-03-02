@@ -16,7 +16,7 @@ namespace DanTup.TestAdapters
 		/// <summary>
 		/// Location that the extension is installed; used for locating resources that were included (eg. lua.exe).
 		/// </summary>
-		protected static readonly string extensionFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+		public abstract string ExtensionFolder { get; }
 
 		/// <summary>
 		/// Gets the tests cases via the external command.
@@ -54,9 +54,9 @@ namespace DanTup.TestAdapters
 				if (!string.IsNullOrWhiteSpace(t.ErrorStackTrace))
 				{
 					t.ErrorStackTrace = t.ErrorStackTrace
-						.Replace(extensionFolder + @"\", "")
-						.Replace(extensionFolder.ToUpper() + @"\", "")
-						.Replace(extensionFolder.ToLower() + @"\", ""); // HACK: Don't get me started on VS's random all-lowercasing or all-uppercasing of paths :(
+						.Replace(ExtensionFolder + @"\", "")
+						.Replace(ExtensionFolder.ToUpper() + @"\", "")
+						.Replace(ExtensionFolder.ToLower() + @"\", ""); // HACK: Don't get me started on VS's random all-lowercasing or all-uppercasing of paths :(
 				}
 			}
 
