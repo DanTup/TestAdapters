@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 	<Metadata>
-		<Identity Id="41ed434d-e66b-47e9-aa18-181c96101007" Version="1.5" Language="en-US" Publisher="Danny Tuppeny" />
+		<Identity Id="41ed434d-e66b-47e9-aa18-181c96101007" Version="1.6" Language="en-US" Publisher="Danny Tuppeny" />
 		<DisplayName>Jasmine Test Adapter</DisplayName>
 		<Description xml:space="preserve">Test Adapter and for the Jasmine JavaScript testing framework.</Description>
 		<MoreInfo>https://github.com/DanTup/TestAdapters/blob/master/README.jasmine.md</MoreInfo>
