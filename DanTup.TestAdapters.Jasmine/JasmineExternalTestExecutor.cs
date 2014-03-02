@@ -4,6 +4,8 @@ using System.Reflection;
 
 namespace DanTup.TestAdapters.Jasmine
 {
+	// TODO: Ditch some of the cruft in TestFramework.js and use node_suite.js
+	// See: http://stackoverflow.com/questions/22127452/whats-the-correct-way-to-use-jasmine-from-node/22128474#22128474
 	public class JasmineExternalTestExecutor : ExternalTestExecutor
 	{
 		static readonly string extensionFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
