@@ -43,7 +43,7 @@ namespace DanTup.TestAdapters
 		{
 			var directory = Path.GetDirectoryName(source);
 			// VS will open the file, but not jump to the line number if the path contais "\.\", so make sure we handle this
-			var path = Path.Combine(directory, test.CodeFilePath.StartsWith(".\\") ? test.CodeFilePath.Substring(2) : test.CodeFilePath);
+			var path = test.CodeFilePath != null ? Path.Combine(directory, test.CodeFilePath.StartsWith(".\\") ? test.CodeFilePath.Substring(2) : test.CodeFilePath) : null;
 
 			var testCase = new TestCase(test.Name, ExecutorUri, source)
 			{
