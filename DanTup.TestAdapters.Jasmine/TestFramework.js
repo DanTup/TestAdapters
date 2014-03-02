@@ -22,13 +22,36 @@ var restoreOutput = function () {
 
 // Setup
 var env = jasmine.getEnv();
-env.specFilter = function () { return process.argv.length !== 5 || process.argv[4] !== 'list'; } // Flag tests not to match the filter if we're listing
 env.addReporter(new xmlReporter(restoreOutput)); // Set up the console logger
 
 // Create some global functions to avoid putting jasmine.getEnv() everywhere
 describe = env.describe;
+xdescribe = env.xdescribe;
+beforeEach = env.beforeEach
+afterEach = env.afterEach;
 it = env.it;
+xit = env.xit;
 expect = env.expect;
+spyOn = env.spyOn;
+
+// SUPERBODGE (See Issue #4)
+// Unti we can find a good way of getting locations for the tests, when asked for a list, we will
+// force them all to fail by replacing the body of the function with one tat immediately throws
+// an error that capture the stack from the real location
+if (process.argv.length === 5 && process.argv[4] === 'list') {
+	beforeEach = function () { };
+	afterEach = function () { };
+	spyOn = function () { };
+	it = function (description, fn) {
+		// Capture the stack for the call to it()
+		var error = new Error('TEST LISTING; DUMMY ERROR');
+
+		// Set up a dummy it() that just throws the error we premade
+		env.it(description, function () {
+			throw error;
+		});
+	}
+}
 
 
 // Include tests file
