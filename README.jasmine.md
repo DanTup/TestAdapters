@@ -10,7 +10,7 @@ Features
 Installation
 ===
 
-1. Install from Visual Studio Gallery (TODOLINK)
+1. Install from [Visual Studio Gallery](http://visualstudiogallery.msdn.microsoft.com/102979e0-61ba-4c6f-a18c-ca64cc7bd2c6)
 
 Usage
 ===
