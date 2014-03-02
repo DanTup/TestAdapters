@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanTup.TestAdapters.Lua", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanTup.TestAdapters.Lua.Vsix", "DanTup.TestAdapters.Lua.Vsix\DanTup.TestAdapters.Lua.Vsix.csproj", "{3360FAA4-7ECB-4243-A94C-2E7E9B022989}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanTup.TestAdapters.Jasmine.Vsix", "DanTup.TestAdapters.Jasmine.Vsix\DanTup.TestAdapters.Jasmine.Vsix.csproj", "{949DBE38-4AE5-4889-8415-60C1A7369297}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanTup.TestAdapters.Jasmine", "DanTup.TestAdapters.Jasmine\DanTup.TestAdapters.Jasmine.csproj", "{8D399B63-EB64-482E-BD7E-C9782BB5CBB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{3360FAA4-7ECB-4243-A94C-2E7E9B022989}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3360FAA4-7ECB-4243-A94C-2E7E9B022989}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3360FAA4-7ECB-4243-A94C-2E7E9B022989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{949DBE38-4AE5-4889-8415-60C1A7369297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{949DBE38-4AE5-4889-8415-60C1A7369297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{949DBE38-4AE5-4889-8415-60C1A7369297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{949DBE38-4AE5-4889-8415-60C1A7369297}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D399B63-EB64-482E-BD7E-C9782BB5CBB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D399B63-EB64-482E-BD7E-C9782BB5CBB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D399B63-EB64-482E-BD7E-C9782BB5CBB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D399B63-EB64-482E-BD7E-C9782BB5CBB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+	<Metadata>
+		<Identity Id="41ed434d-e66b-47e9-aa18-181c96101007" Version="1.2" Language="en-US" Publisher="Danny Tuppeny" />
+		<DisplayName>Jasmine Test Adapter</DisplayName>
+		<Description xml:space="preserve">Test Adapter and for the Jasmine JavaScript testing framework.</Description>
+		<MoreInfo>https://github.com/DanTup/TestAdapters/blob/master/README.jasmine.md</MoreInfo>
+		<License>LICENCE.txt</License>
+		<GettingStartedGuide>https://github.com/DanTup/TestAdapters/blob/master/README.jasmine.md</GettingStartedGuide>
+		<ReleaseNotes>https://github.com/DanTup/TestAdapters/releases</ReleaseNotes>
+		<Icon>Resources\Package.ico</Icon>
+		<PreviewImage>Screenshot.png</PreviewImage>
+		<Tags>jasmine, javascript, test, framework, adapter</Tags>
+	</Metadata>
+	<Installation InstalledByMsi="false">
+		<InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0]" />
+	</Installation>
+	<Dependencies>
+		<Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+	</Dependencies>
+	<Assets>
+		<Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="DanTup.TestAdapters.Jasmine" Path="|DanTup.TestAdapters.Jasmine|" />
+		<Asset Type="UnitTestExtension" d:Source="Project" d:ProjectName="DanTup.TestAdapters.Jasmine" Path="|DanTup.TestAdapters.Jasmine|" />
+		<Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="DanTup.TestAdapters" Path="|DanTup.TestAdapters|" AssemblyName="|DanTup.TestAdapters;AssemblyName|" />
+	</Assets>
+</PackageManifest>
