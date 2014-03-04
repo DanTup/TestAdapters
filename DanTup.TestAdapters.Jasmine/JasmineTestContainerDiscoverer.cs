@@ -8,8 +8,8 @@ namespace DanTup.TestAdapters.Jasmine
 	[Export(typeof(ITestContainerDiscoverer))]
 	public class JasmineTestContainerDiscoverer : TestContainerDiscoverer
 	{
-		protected override string TestContainerFileExtension { get { return ".jstests"; } }
-		protected override string[] WatchedFilePatterns { get { return new[] { "*.jstests", "*.js" }; } }
+		protected override string[] TestContainerFileExtensions { get { return new[] { ".jstest", ".jstests" }; } }
+		protected override string[] WatchedFilePatterns { get { return new[] { "*.jstest", "*.jstests", "*.js" }; } }
 
 		[ImportingConstructor]
 		public JasmineTestContainerDiscoverer([Import(typeof(SVsServiceProvider))] IServiceProvider serviceProvider)

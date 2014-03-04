@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 
 namespace DanTup.TestAdapters.Jasmine
 {
+	[FileExtension(".jstest")]
 	[FileExtension(".jstests")]
 	[DefaultExecutorUri(JasmineTestExecutor.TestExecutorUriString)]
 	public class JasmineTestDiscoverer : TestDiscoverer

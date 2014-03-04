@@ -16,7 +16,7 @@ namespace DanTup.TestAdapters
 	public abstract class TestContainerDiscoverer : ITestContainerDiscoverer, IDisposable, IVsSolutionEvents, IVsHierarchyEvents
 	{
 		public abstract Uri ExecutorUri { get; }
-		protected abstract string TestContainerFileExtension { get; }
+		protected abstract string[] TestContainerFileExtensions { get; }
 		protected abstract string[] WatchedFilePatterns { get; }
 
 		readonly IVsSolution solutionService;
@@ -62,7 +62,7 @@ namespace DanTup.TestAdapters
 					.GetProjects()
 					.SelectMany(p => p.GetProjectItems())
 					.Where(File.Exists)
-					.Where(f => f.EndsWith(this.TestContainerFileExtension))
+					.Where(f => this.TestContainerFileExtensions.Any(ext => f.EndsWith(ext)))
 					.Select(f => new TestContainer(this, f))
 					.ToArray();
 
