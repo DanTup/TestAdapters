@@ -59,3 +59,6 @@ require(process.argv[3]);
 
 // Kick off execution
 env.execute();
+
+// Tell Node to exit, otherwise it'll hang around if there are any background threads (Issue #8)
+process.exit()
