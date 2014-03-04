@@ -34,7 +34,7 @@ xit = env.xit;
 expect = env.expect;
 spyOn = env.spyOn;
 
-// SUPERBODGE (See Issue #4)
+// SUPERBODGE (See Issue #3)
 // Unti we can find a good way of getting locations for the tests, when asked for a list, we will
 // force them all to fail by replacing the body of the function with one tat immediately throws
 // an error that capture the stack from the real location

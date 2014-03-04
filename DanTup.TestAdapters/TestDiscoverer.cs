@@ -38,7 +38,7 @@ namespace DanTup.TestAdapters
 			var path = test.CodeFilePath != null ? Path.Combine(directory, test.CodeFilePath.StartsWith(".\\") ? test.CodeFilePath.Substring(2) : test.CodeFilePath) : null;
 			var line = test.LineNumber;
 
-			// SUPERBODGE (See Issue #4)
+			// SUPERBODGE (See Issue #3)
 			// If we don't have the location of the test, but we have a stack, parse it out
 			// This is temporary until we can find a better way to get filename/line numbers via Jasmine
 			if (path == null && !string.IsNullOrWhiteSpace(test.ErrorStackTrace))
