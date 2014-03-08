@@ -143,6 +143,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Screenshot.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\DanTup.TestAdapters.Xml\DanTup.TestAdapters.Xml.csproj">
       <Project>{14dfcdc1-f990-4501-b6d0-36ebe7dd21ec}</Project>
       <Name>DanTup.TestAdapters.Xml</Name>
