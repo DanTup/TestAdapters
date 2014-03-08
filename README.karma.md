@@ -8,7 +8,7 @@ TODO: Video
 Installation and Setup
 ===
 
-1. Install from Visual Studio Gallery (TODO: Link)
+1. Install from [Visual Studio Gallery](http://visualstudiogallery.msdn.microsoft.com/bfe6feb7-7ec4-4e8e-9d90-cf6ea2cd2169)
 2. Install/download nodejs (I grabbed the exe [from here](http://nodejs.org/dist/) and added it to my PATH)
 3. Install/download npm (I grabbed the zip [from here](http://nodejs.org/dist/npm/) and put it in the same folder as node.exe)
 4. Optionally install node modules globally
