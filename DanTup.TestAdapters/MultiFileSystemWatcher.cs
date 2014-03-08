@@ -14,6 +14,11 @@ namespace DanTup.TestAdapters
 
 		public void AddWatcher(string directory, string filePattern)
 		{
+			// HACK: Sometimes VS tells us of solution dirs that don't exist (possibly unsaved filesystem-based web sites?), but
+			// the FileSystemWatcher cries if we ask it to monitor that :(
+			if (!Directory.Exists(directory))
+				return;
+
 			var watcher = new FileSystemWatcher(directory, filePattern);
 			watcher.NotifyFilter = NotifyFilters.DirectoryName | NotifyFilters.FileName | NotifyFilters.LastWrite;
 			watcher.IncludeSubdirectories = true;
