@@ -1,4 +1,4 @@
-﻿Realtime cross-browser Karma JavaScript test results in Visual Studio Test Explorer
+﻿Cross-browser Karma JavaScript test results in Visual Studio Test Explorer
 =========
 
 [![Screenshot of Karma tests in Visual Studio Test Explorer; click for video](DanTup.TestAdapters.Xml.Vsix/Screenshot.png)](http://www.youtube.com/watch?v=-28j6Ek8D7w)
