@@ -6,10 +6,10 @@
 Features
 ===
 
-- Automatically discovers test functions that begin with "test_" from .luatests files
+- Automatically discovers test functions that begin with "test_" from .luatest files
 - .luatest files can include other .lua files using require or dofile
-- Automatically update test list when any .lua or .luatests file is updated
-- Automatically executes tests when any .lua or .luatests file is if "Run tests after build" is selected in the Visual Studio Test Explorer
+- Automatically update test list when any .lua or .luatest file is updated
+- Automatically executes tests when any .lua or .luatest file is if "Run tests after build" is selected in the Visual Studio Test Explorer
 - Executes testframework_setup and testframework_teardown functions (if found) before/after each test
 
 Installation
@@ -19,7 +19,7 @@ Installation
 
 Usage
 ===
-1. Create a .luatests file in any Visual Studio project
+1. Create a .luatest file in any Visual Studio project
 2. Include any additional .lua files using require or dofile
 3. Start any test fuctions with test_ and use assert() or throw errors for failures
 4. Create a testframework_setup or testframework_teardown function if you have code that must be run before/after each test

@@ -6,8 +6,8 @@
 Features
 ===
 
-- Automatically update test list when any .js or .jstests file is updated
-- Automatically executes tests when any .js or .jstests file is if "Run tests after build" is selected in the Visual Studio Test Explorer
+- Automatically update test list when any .js or .jstest file is updated
+- Automatically executes tests when any .js or .jstest file is if "Run tests after build" is selected in the Visual Studio Test Explorer
 
 Installation
 ===
@@ -16,7 +16,7 @@ Installation
 
 Usage
 ===
-1. Create a .jstests file in any Visual Studio project
+1. Create a .jstest file in any Visual Studio project
 2. Include any additional .js files using Node's require()
 3. Create tests using describe/it/expect; see [Jasmine website](http://jasmine.github.io/) for full details
 
