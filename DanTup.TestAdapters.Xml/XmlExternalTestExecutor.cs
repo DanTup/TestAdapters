@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
@@ -9,20 +10,20 @@ namespace DanTup.TestAdapters.Xml
 		static readonly string extensionFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 		public override string ExtensionFolder { get { return extensionFolder; } }
 
-		static readonly string luaExecutable = Path.Combine(extensionFolder, "lua52.exe");
-		static readonly string testFrameworkFile = Path.Combine(extensionFolder, "TestFramework.lua");
-
-		protected override ProcessStartInfo CreateProcessStartInfo(string source, string args)
+		/// <summary>
+		/// Reads the results XML file directly.
+		/// </summary>
+		public override IEnumerable<GenericTest> GetTestCases(string source, Action<string> logger)
 		{
-			args = string.Format("\"{0}\" \"{1}\" {2}", testFrameworkFile.Replace("\"", "\\\""), source.Replace("\"", "\\\""), args);
+			return ParseTestOutput(File.ReadAllText(source));
+		}
 
-			return new ProcessStartInfo(luaExecutable, args)
-			{
-				WorkingDirectory = Path.GetDirectoryName(source),
-				UseShellExecute = false,
-				RedirectStandardOutput = true,
-				RedirectStandardError = true
-			};
+		/// <summary>
+		/// Reads the results XML file directly.
+		/// </summary>
+		public override IEnumerable<GenericTest> GetTestResults(string source, Action<string> logger)
+		{
+			return ParseTestOutput(File.ReadAllText(source));
 		}
 	}
 }
