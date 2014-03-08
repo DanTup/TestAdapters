@@ -1,7 +1,7 @@
 ﻿Xml Test Result Parser
 =========
 
-The XML test result parser simply parses simple XML files of test results and displays them in the Visual Studio. Although this sounds quite pointless, it allows great integration of other third party tools with the Visual Studio.
+The XML test result parser simply parses simple XML files of test results and displays them in the Visual Studio. Although this sounds quite pointless, it allows integration of other third party tools, such as Karma, with Visual Studio.
 
 Example uses:
 - [Displaying Realtime Cross-Browser Karma JavaScript test results in Visual Studio Test Explorer](README.karma.md)
