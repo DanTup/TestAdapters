@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 	<Metadata>
-		<Identity Id="908a18f2-e3a1-4300-982e-bb46baa7b181" Version="1.7" Language="en-US" Publisher="Company" />
+		<Identity Id="908a18f2-e3a1-4300-982e-bb46baa7b181" Version="1.8" Language="en-US" Publisher="Company" />
 		<DisplayName>Xml Test Result Parser (Karma/Jasmine/Angular)</DisplayName>
 		<Description xml:space="preserve">Test Adapter thread reads static XML files, for use with external tools such as Karma/Jasmine/Angular testing.</Description>
 		<MoreInfo>https://github.com/DanTup/TestAdapters/blob/master/README.xml.md</MoreInfo>
