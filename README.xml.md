@@ -1,7 +1,10 @@
-﻿Xml Test Result Parser (ideal for Karma/Jasmine/Angular)
+﻿Xml Test Result Parser
 =========
 
-blah
+The XML test result parser simply parses simple XML files of test results and displays them in the Visual Studio. Although this sounds quite pointless, it allows great integration of other third party tools with the Visual Studio.
+
+Example uses:
+- [Displaying Realtime Cross-Browser Karma JavaScript test results in Visual Studio Test Explorer](README.karma.md)
 
 Feedback
 ===
