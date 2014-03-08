@@ -56,20 +56,22 @@ namespace DanTup.TestAdapters
 		{
 			// First line is the error message
 			// Then there's one line of our framework; but just to be a bit more future-proof, exclude any that look like extension
-			var matchingLine = test.ErrorStackTrace.Split('\n').Skip(1).FirstOrDefault(l => !l.ToLower().Contains(ExtensionFolder.ToLower()));
+			var possibleLines = test.ErrorStackTrace.Split('\n').Skip(1).Where(l => !l.ToLower().Contains(ExtensionFolder.ToLower()));
 
-			var match = Regex.Match(matchingLine, @"\((.+):(\d+):\d+\)");
+			foreach (var matchingLine in possibleLines)
+			{
+				var match = Regex.Match(matchingLine, @"\((.+):(\d+):\d+\)", RegexOptions.Compiled);
 
-			if (match.Groups.Count >= 3)
-			{
-				path = match.Groups[1].Value;
-				line = int.Parse(match.Groups[2].Value);
+				if (match.Groups.Count >= 3)
+				{
+					path = match.Groups[1].Value.Replace("/", @"\");
+					line = int.Parse(match.Groups[2].Value);
+					return;
+				}
 			}
-			else
-			{
-				path = null;
-				line = 0;
-			}
+
+			path = null;
+			line = 0;
 		}
 	}
 }
