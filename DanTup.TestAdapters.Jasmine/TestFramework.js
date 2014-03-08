@@ -61,8 +61,7 @@ require(process.argv[3]);
 env.execute();
 
 // Tell Node to exit, otherwise it'll hang around if there are any background threads (Issue #8)
-// ... but it's not to simply, because writing to stdout is async, so we need to flush
-// ... but, flush is also Async (OMGWTF!), so we need to throw in a callback to exit when it drains
+// ... but, we need to wait until stdout has been flushed or we won't get all the results!
 process.stdout.once('drain', function() {
 	process.exit()
 })
