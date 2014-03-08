@@ -1,4 +1,4 @@
-﻿Displaying Realtime Cross-Browser Karma JavaScript test results in Visual Studio Test Explorer
+﻿Displaying realtime cross-browser Karma JavaScript test results in Visual Studio Test Explorer
 =========
 
 TODO: Video
