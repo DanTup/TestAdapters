@@ -33,9 +33,9 @@ Usage
       4. Exclusions: _(none)_
       5. Watch for changes: Yes
 4. Open up the generated karma.config.js in your text editor and add 'xml' as a reporter
-   - ```reporters: ['progress', 'xml']``` becomes ```reporters: ['progress']```
+   - ```reporters: ['progress']``` becomes ```reporters: ['progress', 'xml']```
 5. Open Visual Studio and create a project that lives in the folder that contains your tests/karma config file
-   - I usually always choose File -> Open Web Site and choose the FileSystem option, pointing at the folder
+   - I usually choose File -> Open Web Site and choose the FileSystem option, pointing at the folder
 6. Create a simple test we can use to verify everything works. The filename must match the filter you gave to ```karma init``` earlier (eg. ```MyTestSpecs.js```)
    - ```describe("a test", function() {
             it("passes", function() {
