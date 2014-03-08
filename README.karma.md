@@ -3,6 +3,8 @@
 
 TODO: Video
 
+![Screenshot of Karma tests in Visual Studio Test Explorer](DanTup.TestAdapters.Xml.Vsix/Screenshot.png)
+
 Installation and Setup
 ===
 
