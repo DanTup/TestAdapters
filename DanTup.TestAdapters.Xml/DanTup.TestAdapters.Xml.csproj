@@ -51,6 +51,10 @@
     <Compile Include="..\DanTup.TestAdapters\Properties\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="XmlExternalTestExecutor.cs" />
+    <Compile Include="XmlTestContainerDiscoverer.cs" />
+    <Compile Include="XmlTestDiscoverer.cs" />
+    <Compile Include="XmlTestExecutor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -143,6 +143,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <ProjectReference Include="..\DanTup.TestAdapters.Xml\DanTup.TestAdapters.Xml.csproj">
+      <Project>{14dfcdc1-f990-4501-b6d0-36ebe7dd21ec}</Project>
+      <Name>DanTup.TestAdapters.Xml</Name>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
+    </ProjectReference>
     <ProjectReference Include="..\DanTup.TestAdapters\DanTup.TestAdapters.csproj">
       <Project>{6863B093-3B08-4E78-A542-6C121D31399F}</Project>
       <Name>DanTup.TestAdapters</Name>
