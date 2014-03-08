@@ -3,8 +3,10 @@
 
 A collection of test adapters and frameworks for non-.NET languages in Visual Studio.
 
+- [Karma JavaScript Test Adapter](README.karma.md)
 - [Lua Test Adapter and Framework](README.lua.md)
 - [Jasmine Test Adapter](README.jasmine.md)
+- [XML Test Adapter](README.xml.md)
 
 Feedback
 ===
