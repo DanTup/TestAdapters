@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace DanTup.TestAdapters.Lua
 {
-	public class LuaExternalTestExecutor : ExternalTestExecutor
+	public class LuaExternalTestExecutor : ExternalCommandTestExecutor
 	{
 		static readonly string extensionFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 		public override string ExtensionFolder { get { return extensionFolder; } }

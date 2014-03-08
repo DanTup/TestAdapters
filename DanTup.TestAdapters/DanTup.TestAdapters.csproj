@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExternalCommandTestExecutor.cs" />
     <Compile Include="GenericTestXml.cs" />
     <Compile Include="ExternalTestExecutor.cs" />
     <Compile Include="MultiFileSystemWatcher.cs" />
