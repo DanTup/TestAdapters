@@ -48,6 +48,7 @@ Usage
 8. In Visual Studio, toggle the "Run Tests on Build" option _on_ in the Test Explorer Window
 9. Right-click -> Refresh on the project, to ensure Visual Studio spots the test-results.testxml file
 10. As you make changes to your js files and press save, Karma will now automatically execute your tests and the results will magically update in Visual Studio!
+11. Bonus: You can open up other browsers and point them at the url that's loaded in the existing browsers and they will automatically be used for tests. Eg. enter the URL into your smartphone browser, and now it will show up in the test results too!
 
 Feedback
 ===
