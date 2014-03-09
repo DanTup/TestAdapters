@@ -29,7 +29,7 @@ Usage
       1. Test framework: jasmine
       2. RequireJS: No
       2. Browsers: Chrome, IE, PhantomJS
-      3. Test files: *Specs.js
+      3. Test files: \*Specs.js
       4. Exclusions: _(none)_
       5. Watch for changes: Yes
 4. Open up the generated karma.config.js in your text editor and add 'xml' as a reporter
