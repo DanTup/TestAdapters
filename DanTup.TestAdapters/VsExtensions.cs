@@ -28,10 +28,15 @@ namespace DanTup.TestAdapters
 
 		public static IEnumerable<string> GetProjectItems(this IVsHierarchy project)
 		{
+			return project.GetProjectItems(VSConstants.VSITEMID_ROOT);
+		}
+
+		public static IEnumerable<string> GetProjectItems(this IVsHierarchy project, uint itemID)
+		{
 			object item;
 
 			// Get first item
-			project.GetProperty(VSConstants.VSITEMID_ROOT, (int)__VSHPROPID.VSHPROPID_FirstVisibleChild, out item);
+			project.GetProperty(itemID, (int)__VSHPROPID.VSHPROPID_FirstVisibleChild, out item);
 
 			while (item != null)
 			{
@@ -40,6 +45,9 @@ namespace DanTup.TestAdapters
 				if (!string.IsNullOrWhiteSpace(canonicalName))
 					yield return canonicalName;
 
+				// Call recursively for children
+				foreach (var child in project.GetProjectItems((uint)(int)item))
+					yield return child;
 
 				// Get next sibling
 				project.GetProperty((uint)(int)item, (int)__VSHPROPID.VSHPROPID_NextVisibleSibling, out item);
