@@ -22,5 +22,6 @@
 		<Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="DanTup.TestAdapters.Lua" Path="|DanTup.TestAdapters.Lua|" />
 		<Asset Type="UnitTestExtension" d:Source="Project" d:ProjectName="DanTup.TestAdapters.Lua" Path="|DanTup.TestAdapters.Lua|" />
 		<Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="DanTup.TestAdapters" Path="|DanTup.TestAdapters|" AssemblyName="|DanTup.TestAdapters;AssemblyName|" />
+		<Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
 	</Assets>
 </PackageManifest>
