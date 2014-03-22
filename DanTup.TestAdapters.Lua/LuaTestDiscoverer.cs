@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel.Adapter;
 
 namespace DanTup.TestAdapters.Lua
 {
+	[FileExtension(".luatest")]
 	[FileExtension(".luatests")]
 	[DefaultExecutorUri(LuaTestExecutor.TestExecutorUriString)]
 	public class LuaTestDiscoverer : TestDiscoverer
