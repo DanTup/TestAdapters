@@ -17,6 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanTup.TestAdapters.Xml", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanTup.TestAdapters.Xml.Vsix", "DanTup.TestAdapters.Xml.Vsix\DanTup.TestAdapters.Xml.Vsix.csproj", "{7E55AB6A-EF30-47C8-BBFB-78E95A84EFDC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D5D93E33-D3F8-43AC-B712-3B45858A5AE3}"
+	ProjectSection(SolutionItems) = preProject
+		UpdateVersions.fsx = UpdateVersions.fsx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
