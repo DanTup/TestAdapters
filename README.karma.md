@@ -1,14 +1,14 @@
 ﻿Cross-browser Karma JavaScript test results in Visual Studio Test Explorer
 =========
 
-[![Screenshot of Karma tests in Visual Studio Test Explorer; click for video](DanTup.TestAdapters.Xml.Vsix/Screenshot.png)](http://www.youtube.com/watch?v=-28j6Ek8D7w)
+[![Screenshot of Karma tests in Visual Studio Test Explorer; click for video](DanTup.TestAdapters.Karma.Vsix/Screenshot.png)](http://www.youtube.com/watch?v=-28j6Ek8D7w)
 
 
 
 Installation and Setup
 ===
 
-1. Install my XML Test Adapter from [Visual Studio Gallery](http://visualstudiogallery.msdn.microsoft.com/bfe6feb7-7ec4-4e8e-9d90-cf6ea2cd2169)
+1. Install my Karma Test Adapter from [Visual Studio Gallery](http://visualstudiogallery.msdn.microsoft.com/bfe6feb7-7ec4-4e8e-9d90-cf6ea2cd2169)
 2. Install/download nodejs (I grabbed the exe [from here](http://nodejs.org/dist/) and added it to my PATH)
 3. Install/download npm (I grabbed the zip [from here](http://nodejs.org/dist/npm/) and put it in the same folder as node.exe)
 4. Install the karma-cli node module globally
