@@ -1,3 +1,3 @@
 ﻿using System.Reflection;
 
-[assembly: AssemblyTitle("Xml Test Result Parser (Vsix)")]
+[assembly: AssemblyTitle("Karma Test Result Parser (Vsix)")]
