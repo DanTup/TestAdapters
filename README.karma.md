@@ -19,7 +19,7 @@ Usage
 1. Create/navigate to the folder that contains/will contain your tests
 2. Create a package.json to hold your node dependencies
    - PowerShell: ```"{}" | Out-File -Encoding ascii package.json```
-   - or CMD: ```echo '{}' > package2.json```
+   - or CMD: ```echo '{}' > package.json```
 2. Install karma and some dependencies
    1. ```npm install karma --save-dev```
    2. ```npm install karma-xml-reporter --save-dev```
