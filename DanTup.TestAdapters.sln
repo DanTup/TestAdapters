@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanTup.TestAdapters.Jasmine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanTup.TestAdapters.Xml", "DanTup.TestAdapters.Xml\DanTup.TestAdapters.Xml.csproj", "{14DFCDC1-F990-4501-B6D0-36EBE7DD21EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanTup.TestAdapters.Karma.Vsix", "DanTup.TestAdapters.Xml.Vsix\DanTup.TestAdapters.Karma.Vsix.csproj", "{7E55AB6A-EF30-47C8-BBFB-78E95A84EFDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanTup.TestAdapters.Karma.Vsix", "DanTup.TestAdapters.Karma.Vsix\DanTup.TestAdapters.Karma.Vsix.csproj", "{7E55AB6A-EF30-47C8-BBFB-78E95A84EFDC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D5D93E33-D3F8-43AC-B712-3B45858A5AE3}"
 	ProjectSection(SolutionItems) = preProject
