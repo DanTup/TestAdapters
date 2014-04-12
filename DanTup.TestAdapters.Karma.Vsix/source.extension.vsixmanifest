@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 	<Metadata>
-		<Identity Id="908a18f2-e3a1-4300-982e-bb46baa7b181" Version="1.9" Language="en-US" Publisher="Danny Tuppeny" />
+		<Identity Id="908a18f2-e3a1-4300-982e-bb46baa7b181" Version="1.10" Language="en-US" Publisher="Danny Tuppeny" />
 		<DisplayName>VS Adapter for Google's Karma Test Runner</DisplayName>
 		<Description xml:space="preserve">Test Adapter to integration test results from Google's Karma Test Runner into Visual Studio.</Description>
 		<MoreInfo>https://github.com/DanTup/TestAdapters/blob/master/README.karma.md</MoreInfo>
