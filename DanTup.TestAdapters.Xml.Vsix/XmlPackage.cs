@@ -2,7 +2,7 @@
 
 namespace DanTup.TestAdapters.Xml.Vsix
 {
-	[InstalledProductRegistration("DanTup's Xml Test Result Parser (Karma/Jasmine/Angular)", @"Test Adapter thread reads static XML files, for use with external tools such as Karma/Jasmine/Angular testing. https://github.com/DanTup/TestAdapters", "1.9")]
+	[InstalledProductRegistration("DanTup's VS Adapter for Google's Karma Test Runner", @"Test Adapter to integration test results from Google's Karma Test Runner into Visual Studio. https://github.com/DanTup/TestAdapters", "1.9")]
 	public sealed class XmlPackage
 	{
 	}

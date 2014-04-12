@@ -2,15 +2,15 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 	<Metadata>
 		<Identity Id="908a18f2-e3a1-4300-982e-bb46baa7b181" Version="1.9" Language="en-US" Publisher="Danny Tuppeny" />
-		<DisplayName>Xml Test Result Parser (Karma/Jasmine/Angular)</DisplayName>
-		<Description xml:space="preserve">Test Adapter thread reads static XML files, for use with external tools such as Karma/Jasmine/Angular testing.</Description>
-		<MoreInfo>https://github.com/DanTup/TestAdapters/blob/master/README.xml.md</MoreInfo>
+		<DisplayName>VS Adapter for Google's Karma Test Runner</DisplayName>
+		<Description xml:space="preserve">Test Adapter to integration test results from Google's Karma Test Runner into Visual Studio.</Description>
+		<MoreInfo>https://github.com/DanTup/TestAdapters/blob/master/README.karma.md</MoreInfo>
 		<License>LICENCE.txt</License>
-		<GettingStartedGuide>https://github.com/DanTup/TestAdapters/blob/master/README.xml.md</GettingStartedGuide>
+		<GettingStartedGuide>https://github.com/DanTup/TestAdapters/blob/master/README.karma.md</GettingStartedGuide>
 		<ReleaseNotes>https://github.com/DanTup/TestAdapters/releases</ReleaseNotes>
 		<Icon>Resources\Package.ico</Icon>
 		<PreviewImage>Screenshot.png</PreviewImage>
-		<Tags>test, framework, adapter, karma, angular, testacular, jasmine</Tags>
+		<Tags>test, framework, adapter, karma, karmajs, google, angular, testacular, jasmine</Tags>
 	</Metadata>
 	<Installation InstalledByMsi="false">
 		<InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0]" />
