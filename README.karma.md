@@ -26,8 +26,8 @@ Usage
    3. ```npm install karma-jasmine --save-dev```
    4. ```npm install karma-phantomjs-launcher --save-dev``` _(required only if you want to use PhantomJS)_
    5. ```npm install karma-ie-launcher --save-dev``` _(required only if you want Karma to be able to launch IE)_
-   6. ```npm installkarma-chrome-launcher --save-dev``` _(required only if you want Karma to be able to launch Chrome)_
-   7. ```npm installkarma-firefox-launcher --save-dev``` _(required only if you want Karma to be able to launch Firefox)_
+   6. ```npm install karma-chrome-launcher --save-dev``` _(required only if you want Karma to be able to launch Chrome)_
+   7. ```npm install karma-firefox-launcher --save-dev``` _(required only if you want Karma to be able to launch Firefox)_
 3. Create a karma config file in the folder with your tests
    1. ```karma init```
    2. _answer the questions, for example:_
