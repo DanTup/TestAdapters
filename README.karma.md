@@ -60,6 +60,20 @@ Usage
 10. As you make changes to your js files and press save, Karma will now automatically execute your tests and the results will magically update in Visual Studio!
 11. Bonus: You can open up other browsers and point them at the url that's loaded in the existing browsers and they will automatically be used for tests. Eg. enter the URL into your smartphone browser, and now it will show up in the test results too!
 
+Optional: Add Mocha & Chai
+===
+
+The above instructions install Karma with [Jasmine][jasmine]. If [Mocha][mocha] and [Chai][chai] are more your cup of tea, then follow these optional instructions to add these.
+
+1. Install Mocha and Chai
+   1. `npm install karma-mocha --save-dev`
+   1. `npm install karma-chai --save-dev`
+1. Update in the `karma.conf.js` file the frameworks configuration
+   - `frameworks: ['jasmine', 'mocha', 'chai'],`
+1. Create Chai based unit tests
+   1. Jasmine: `describe("a Jasmine test", function() { it("passes", function() { expect(true).to.equal(true); } ); } );`
+   2. Mocha: `describe("a Mocha test", function() { it("passes", function() { expect(true).to.equal(true); } ); } );`
+
 Feedback
 ===
 Please send your feedback/issues/feature requests! :-)
@@ -68,3 +82,8 @@ Please send your feedback/issues/feature requests! :-)
 - Twitter: [@DanTup](https://twitter.com/DanTup)
 - Google+: [Danny Tuppeny](http://profile.dantup.com/)
 - Email: [danny+testadapters@tuppeny.com](mailto:danny+testadapters@tuppeny.com)
+
+
+  [jasmine]: http://jasmine.github.io
+  [mocha]: http://mochajs.org
+  [chai]: http://chaijs.com
