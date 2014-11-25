@@ -7,6 +7,7 @@ namespace DanTup.TestAdapters.Lua
 {
 	[FileExtension(".luatest")]
 	[FileExtension(".luatests")]
+    [FileExtension(".lua")]
 	[DefaultExecutorUri(LuaTestExecutor.TestExecutorUriString)]
 	public class LuaTestDiscoverer : TestDiscoverer
 	{
