@@ -8,7 +8,7 @@ namespace DanTup.TestAdapters.Lua
 	[Export(typeof(ITestContainerDiscoverer))]
 	public class LuaTestContainerDiscoverer : TestContainerDiscoverer
 	{
-		protected override string[] TestContainerFileExtensions { get { return new[] { ".luatest", ".luatests" }; } }
+		protected override string[] TestContainerFileExtensions { get { return new[] { ".luatest", ".luatests", "tests.lua" }; } }
 		protected override string[] WatchedFilePatterns { get { return new[] { "*.luatest", "*.luatests", "*.lua" }; } }
 
 		[ImportingConstructor]

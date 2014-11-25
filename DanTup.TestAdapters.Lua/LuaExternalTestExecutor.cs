@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Linq;
+using System;
 
 namespace DanTup.TestAdapters.Lua
 {
@@ -9,8 +11,13 @@ namespace DanTup.TestAdapters.Lua
 		static readonly string extensionFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 		public override string ExtensionFolder { get { return extensionFolder; } }
 
-		static readonly string luaExecutable = Path.Combine(extensionFolder, "lua52.exe");
+		static readonly string luaExecutable = Path.Combine(extensionFolder, "luajit.exe");
 		static readonly string testFrameworkFile = Path.Combine(extensionFolder, "TestFramework.lua");
+
+        public override System.Collections.Generic.IEnumerable<GenericTest> GetTestCases(string source, System.Action<string> logger)
+        {
+            return source.EndsWith("tests.lua") ? base.GetTestCases(source, logger) : Enumerable.Empty<GenericTest>();
+        }
 
 		protected override ProcessStartInfo CreateProcessStartInfo(string source, string args)
 		{
