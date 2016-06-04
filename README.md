@@ -1,4 +1,6 @@
-﻿Test Adapters and Frameworks for Visual Studio
+> NOTE: This software is not being actively developed or maintained.
+
+Test Adapters and Frameworks for Visual Studio
 =========
 
 A collection of test adapters and frameworks for non-.NET languages in Visual Studio.
